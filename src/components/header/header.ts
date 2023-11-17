@@ -9,7 +9,10 @@ export const Container = styled.header`
     filter: drop-shadow(0px 4px 28px rgba(0, 0, 0, 0.25));
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.div.attrs({
+  role: 'img',
+  'aria-label': 'Logo',
+})`
     width: 16rem;
     height: 13.1875rem;
     flex-shrink: 0;
