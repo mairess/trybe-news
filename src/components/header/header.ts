@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import logo_trybe from '../assets/logo_trybe.png';
+import logo_trybe from '../../assets/logo_trybe.png';
 
-const Container = styled.div`
+export const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,7 +9,7 @@ const Container = styled.div`
     filter: drop-shadow(0px 4px 28px rgba(0, 0, 0, 0.25));
 `;
 
-const Logo = styled.div`
+export const Logo = styled.div`
     width: 16rem;
     height: 13.1875rem;
     flex-shrink: 0;
@@ -29,7 +29,7 @@ const Logo = styled.div`
     }
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
     width: 100%;
     text-align: center; 
     
@@ -50,20 +50,4 @@ const Title = styled.h1`
         font-size: 4.3rem;
         line-height: 3.5rem;
     }
-
 `;
-
-function Header() {
-  return (
-    <header>
-      <Container>
-        <Logo />
-        <Title>
-          Trybe News
-        </Title>
-      </Container>
-    </header>
-  );
-}
-
-export default Header;
