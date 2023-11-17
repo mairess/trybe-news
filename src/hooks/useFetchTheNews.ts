@@ -6,6 +6,7 @@ function useFetchTheNews() {
   const [loading, setLoading] = useState(false);
 
   const API = 'https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=100';
+  const baseURL = 'https://agenciadenoticias.ibge.gov.br/';
 
   useEffect(() => {
     const fetchTheNews = async () => {
@@ -28,7 +29,7 @@ function useFetchTheNews() {
     fetchTheNews();
   }, []);
 
-  return { theNews, setTheNews, loading };
+  return { theNews, setTheNews, loading, baseURL };
 }
 
 export default useFetchTheNews;
