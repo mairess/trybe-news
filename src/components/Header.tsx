@@ -17,6 +17,16 @@ const Logo = styled.div`
     margin-left: 0;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @media screen and (max-width: 480px) {
+        width: 8rem;
+        height: 6.5rem;
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 1024px) {
+        width: 10rem;
+        height: 8rem;
+    }
 `;
 
 const Title = styled.h1`
@@ -30,6 +40,17 @@ const Title = styled.h1`
     font-weight: 400;
     line-height: 0.9375rem;
     letter-spacing: 0.1rem;
+
+    @media screen and (max-width: 480px) {
+        font-size: 3rem;
+        line-height: 3.0rem;
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 1024px) {
+        font-size: 4.3rem;
+        line-height: 3.5rem;
+    }
+
 `;
 
 function Header() {
