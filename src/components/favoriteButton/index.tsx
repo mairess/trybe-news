@@ -1,10 +1,18 @@
-import { Container, StyledButton } from './styles';
-import favorite from '../../assets/FavoriteIcon.svg';
+import { Container, StyledButton, LatestNewsStamp } from './styles';
+import favorite from '../../assets/empty_favorite_icon.svg';
 
-function FavoriteButton() {
+export type ButtonProps = {
+  isLatestNews?: boolean,
+};
+
+function FavoriteButton({ isLatestNews = false }: ButtonProps) {
   return (
-    <Container>
-      <p>Notícia mais recente</p>
+    <Container style={ isLatestNews ? { justifyContent: 'space-between' } : {} }>
+      {isLatestNews && (
+        <LatestNewsStamp>
+          <p>Notícia mais recente</p>
+        </LatestNewsStamp>
+      )}
       <StyledButton>
         <img src={ favorite } alt="favorite button" />
       </StyledButton>

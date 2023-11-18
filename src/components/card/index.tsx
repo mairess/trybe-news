@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { NewsContainer, NewsHeadline, NewsLead, NewsTimestamp } from './style';
 import NewsContext from '../../context/NewsContext';
-import Button from '../button/Button';
+import Button from '../button';
 import FavoriteButton from '../favoriteButton';
 
 function Card() {
@@ -10,7 +10,7 @@ function Card() {
 
   return (
     <NewsContainer>
-      <FavoriteButton />
+      <FavoriteButton isLatestNews />
       {latestOne && (
         <>
           <NewsHeadline>
