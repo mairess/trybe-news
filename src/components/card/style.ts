@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NewsContainer = styled.div`
-    border: 1px solid green;
+    border: 1px solid red;
     /* width: 33.75rem;
     height: 20.5rem;
     flex-shrink: 0; */

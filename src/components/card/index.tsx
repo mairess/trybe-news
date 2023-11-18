@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { NewsContainer, NewsHeadline, NewsLead, NewsTimestamp } from './style';
 import NewsContext from '../../context/NewsContext';
 import Button from '../button/Button';
+import FavoriteButton from '../favoriteButton';
 
 function Card() {
   const { theNews } = useContext(NewsContext);
@@ -9,6 +10,7 @@ function Card() {
 
   return (
     <NewsContainer>
+      <FavoriteButton />
       {latestOne && (
         <>
           <NewsHeadline>
