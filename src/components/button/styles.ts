@@ -16,6 +16,7 @@ export const StyledButton = styled.button`
     align-items: center;
     gap: 0.625rem;
     flex-shrink: 0;
+    cursor: pointer;
 
     border-radius: 0.3125rem;
     background: #05D465;

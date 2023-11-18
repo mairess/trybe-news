@@ -14,6 +14,7 @@ export const StyledButton = styled.button`
     fill: var(--Text, #2A2A2A);
     border: none;
     background: none;
+    cursor: pointer;
 `;
 
 export const LatestNewsStamp = styled.div`
