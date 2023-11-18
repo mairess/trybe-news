@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { StyledButton, NewsTimestamp, Container } from './styles';
 import NewsContext from '../../context/NewsContext';
+import getPublicationDifferenceTime from '../../services/getPublicationDifferenceTime';
 
 type ButtonProps = {
   label: string,
@@ -12,7 +13,7 @@ function Button({ label }: ButtonProps) {
   return (
     <Container>
       <NewsTimestamp>
-        <p>{latestOne.data_publicacao}</p>
+        <p>{getPublicationDifferenceTime(latestOne.data_publicacao)}</p>
       </NewsTimestamp>
       <StyledButton>
         <p>{label}</p>
