@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { NewsContainer, NewsHeadline, NewsLead, NewsTimestamp } from './style';
 import NewsContext from '../../context/NewsContext';
+import Button from '../button/Button';
 
 function Card() {
   const { theNews } = useContext(NewsContext);
@@ -19,6 +20,7 @@ function Card() {
           <NewsTimestamp>
             <p>{latestOne.data_publicacao}</p>
           </NewsTimestamp>
+          <Button />
         </>
       )}
     </NewsContainer>
