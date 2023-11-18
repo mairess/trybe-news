@@ -1,4 +1,4 @@
-function getPublicationDateInZuluTime(publication_date : string) {
+function getPublicationDate(publication_date : string) {
   const partesData = publication_date.split('/');
 
   const day = Number(partesData[0]);
@@ -14,4 +14,4 @@ function getPublicationDateInZuluTime(publication_date : string) {
   return publishedOn;
 }
 
-export default getPublicationDateInZuluTime;
+export default getPublicationDate;

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { StyledButton, NewsTimestamp, Container } from './styles';
 import NewsContext from '../../context/NewsContext';
-import getPublicationDifferenceTime from '../../services/getPublicationDifferenceTime';
+import getPublicationDifferenceTime from '../../services/publicationDateDifferenceTime';
 
 type ButtonProps = {
   label: string,
