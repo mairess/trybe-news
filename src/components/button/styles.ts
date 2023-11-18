@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
 export const StyledButton = styled.button`
     display: flex;
     width: 10.4375rem;
@@ -26,4 +32,18 @@ export const StyledButton = styled.button`
         line-height: 165%; /* 1.44375rem */
     }
 
+`;
+
+export const NewsTimestamp = styled.div`
+    border: 1px solid green;
+    width: 5.875rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+
+    color: var(--Text, #2A2A2A);
+    font-family: Poppins;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 165%;
 `;
