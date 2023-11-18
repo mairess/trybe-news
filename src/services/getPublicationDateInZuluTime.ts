@@ -10,6 +10,7 @@ function getPublicationDateInZuluTime(publication_date : string) {
   const seconds = +partesData[2].split(' ')[1].split(':')[2];
 
   const publishedOn = new Date(year, mouth - 1, day, hours, minutes, seconds);
+
   return publishedOn;
 }
 
