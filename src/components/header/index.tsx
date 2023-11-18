@@ -1,4 +1,4 @@
-import { Container, Logo, Title } from './header';
+import { Container, Logo, Title } from './style';
 
 function Header() {
   return (
