@@ -4,6 +4,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: .5rem 0;
 `;
 
 export const StyledButton = styled.button`
@@ -35,8 +36,10 @@ export const StyledButton = styled.button`
 `;
 
 export const NewsTimestamp = styled.div`
-    border: 1px solid green;
-    width: 5.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.875rem;
     height: 1.25rem;
     flex-shrink: 0;
 
