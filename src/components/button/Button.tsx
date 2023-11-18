@@ -1,8 +1,14 @@
-import { ButtonReadTheNews } from './styles';
+import { StyledButton } from './styles';
 
-function Button() {
+type ButtonProps = {
+  label: string,
+};
+
+function Button({ label }: ButtonProps) {
   return (
-    <ButtonReadTheNews>Leia a notícia</ButtonReadTheNews>
+    <StyledButton>
+      <p>{label}</p>
+    </StyledButton>
   );
 }
 

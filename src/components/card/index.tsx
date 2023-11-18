@@ -20,7 +20,9 @@ function Card() {
           <NewsTimestamp>
             <p>{latestOne.data_publicacao}</p>
           </NewsTimestamp>
-          <Button />
+          <Button
+            label="Leia a notícia aqui"
+          />
         </>
       )}
     </NewsContainer>
