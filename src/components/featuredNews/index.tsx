@@ -1,14 +1,15 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
+import Card from '../card';
 
 function FeaturedNews() {
-  const { theNews, baseURL } = useContext(NewsContext);
+  const { theNews } = useContext(NewsContext);
   const [latestOne] = theNews;
-  console.log(latestOne);
 
   return (
     <div>
-      {latestOne && (
+      <Card />
+      {/* {latestOne && (
         <div key={ latestOne.id }>
           <h1>{latestOne.titulo}</h1>
           <img
@@ -17,7 +18,7 @@ function FeaturedNews() {
           />
           <p>{latestOne.introducao}</p>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
