@@ -29,3 +29,7 @@ export type NewsType = {
 };
 
 export type TheNewsType = NewsType[];
+
+export type DataToParse = {
+  items: NewsTypeJson[];
+};

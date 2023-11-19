@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { NewsTypeJson, TheNewsType } from '../types';
+import { TheNewsType } from '../types';
+import parseImages from '../helpers/parseImages';
 
 function useFetchTheNews() {
   const [theNews, setTheNews] = useState<TheNewsType>([]);
@@ -15,10 +16,9 @@ function useFetchTheNews() {
         const response = await fetch(API);
         const data = await response.json();
 
-        data.items.forEach((news: NewsTypeJson) => {
-          news.imagens = JSON.parse(news.imagens);
-        });
+        parseImages(data);
 
+        console.log(data);
         setTheNews(data.items);
       } catch (error: any) {
         console.log(`Request error: ${error.message}`);

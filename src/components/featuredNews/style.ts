@@ -29,13 +29,13 @@ export const ImgWrapper = styled.div`
         flex-direction: column;
 
         img {
-            width: 350px;
+            width: 21.875rem;
         }
     }
 
     @media screen and (min-width: 481px) and (max-width: 1024px) {
         img {
-            width: 470px;
+            width: 29.375rem;
         }
     }
 `;
