@@ -8,16 +8,24 @@ type CardProps = {
   title: string,
   description: string,
   buttonLabel: string,
+  isFeatured?: boolean,
+  isLatestNews?: boolean,
 };
 
-function Card({ title, description, buttonLabel }: CardProps) {
+function Card({
+  title,
+  description,
+  buttonLabel,
+  isFeatured = true,
+  isLatestNews = false,
+}: CardProps) {
   const { theNews } = useContext(NewsContext);
   const [latestOne] = theNews;
 
   return (
-    <Container>
+    <Container isFeatured={ isFeatured }>
       <div>
-        <ButtonFavorite isLatestNews />
+        {isLatestNews && (<ButtonFavorite isLatestNews={ isLatestNews } />)}
         {latestOne && (
           <>
             <NewsHeadline>
@@ -31,6 +39,7 @@ function Card({ title, description, buttonLabel }: CardProps) {
             />
           </>
         )}
+        {!isLatestNews && (<ButtonFavorite isLatestNews={ isLatestNews } />)}
       </div>
     </Container>
   );

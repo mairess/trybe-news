@@ -23,6 +23,8 @@ function FeaturedNews() {
           title={ latestOne.titulo }
           description={ latestOne.introducao }
           buttonLabel="Leia a notícia aqui"
+          isFeatured={ false }
+          isLatestNews
         />
       )}
     </Container>
