@@ -17,7 +17,14 @@ function FeaturedNews() {
           />
         )}
       </ImgWrapper>
-      <Card />
+      {theNews.length && (
+        <Card
+          key={ latestOne.id }
+          title={ latestOne.titulo }
+          description={ latestOne.introducao }
+          buttonLabel="Leia a notícia aqui"
+        />
+      )}
     </Container>
   );
 }

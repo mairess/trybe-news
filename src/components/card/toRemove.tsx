@@ -4,13 +4,7 @@ import NewsContext from '../../context/NewsContext';
 import ButtonReadTheNews from '../buttonReadTheNews';
 import ButtonFavorite from '../buttonFavorite';
 
-type CardProps = {
-  title: string,
-  description: string,
-  buttonLabel: string,
-};
-
-function Card({ title, description, buttonLabel }: CardProps) {
+function Card() {
   const { theNews } = useContext(NewsContext);
   const [latestOne] = theNews;
 
@@ -21,13 +15,13 @@ function Card({ title, description, buttonLabel }: CardProps) {
         {latestOne && (
           <>
             <NewsHeadline>
-              <h1>{title}</h1>
+              <h1>{latestOne.titulo}</h1>
             </NewsHeadline>
             <NewsLead>
-              <p>{description}</p>
+              <p>{latestOne.introducao}</p>
             </NewsLead>
             <ButtonReadTheNews
-              label={ buttonLabel }
+              label="Leia a notícia aqui"
             />
           </>
         )}
