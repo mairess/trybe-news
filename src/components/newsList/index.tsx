@@ -15,6 +15,7 @@ function NewsList() {
               title={ news.titulo }
               description={ news.introducao }
               buttonLabel="Leia a notícia aqui"
+              publicationDate={ news.data_publicacao }
             />
           );
         })

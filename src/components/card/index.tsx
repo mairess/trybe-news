@@ -10,6 +10,7 @@ type CardProps = {
   buttonLabel: string,
   isFeatured?: boolean,
   isLatestNews?: boolean,
+  publicationDate: string,
 };
 
 function Card({
@@ -18,6 +19,7 @@ function Card({
   buttonLabel,
   isFeatured = true,
   isLatestNews = false,
+  publicationDate,
 }: CardProps) {
   const { theNews } = useContext(NewsContext);
   const [latestOne] = theNews;
@@ -35,6 +37,7 @@ function Card({
               <p>{description}</p>
             </NewsLead>
             <ButtonReadTheNews
+              publicationDate={ publicationDate }
               label={ buttonLabel }
             />
           </>

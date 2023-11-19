@@ -25,6 +25,7 @@ function FeaturedNews() {
           buttonLabel="Leia a notícia aqui"
           isFeatured={ false }
           isLatestNews
+          publicationDate={ latestOne.data_publicacao }
         />
       )}
     </Container>

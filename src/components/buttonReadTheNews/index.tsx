@@ -1,19 +1,16 @@
-import { useContext } from 'react';
 import { StyledButton, NewsTimestamp, Container } from './styles';
-import NewsContext from '../../context/NewsContext';
 import getPublicationDifferenceTime from '../../helpers/showPublicationTimeDifference';
 
 type ButtonProps = {
   label: string,
+  publicationDate: string,
 };
 
-function ButtonReadTheNews({ label }: ButtonProps) {
-  const { theNews } = useContext(NewsContext);
-  const [latestOne] = theNews;
+function ButtonReadTheNews({ label, publicationDate }: ButtonProps) {
   return (
     <Container>
       <NewsTimestamp>
-        <p>{getPublicationDifferenceTime(latestOne.data_publicacao)}</p>
+        <p>{getPublicationDifferenceTime(publicationDate)}</p>
       </NewsTimestamp>
       <StyledButton>
         <p>{label}</p>
