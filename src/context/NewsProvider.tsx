@@ -1,24 +1,23 @@
 import useFetchTheNews from '../hooks/useFetchTheNews';
-import newsContext from './NewsContext';
+import NewsContext from './NewsContext';
 
 type FilterProviderProps = {
   children: React.ReactNode,
 };
 
 function NewsProvider({ children }: FilterProviderProps) {
-  const { theNews, setTheNews, loading, baseURL } = useFetchTheNews();
+  const { theNews, setTheNews, loading } = useFetchTheNews();
 
   return (
-    <newsContext.Provider
+    <NewsContext.Provider
       value={ {
         theNews,
         setTheNews,
         loading,
-        baseURL,
       } }
     >
       {children}
-    </newsContext.Provider>
+    </NewsContext.Provider>
   );
 }
 

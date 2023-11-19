@@ -1,23 +1,24 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
+import Card from '../card';
+import { Container, ImgWrapper } from './style';
 
 function FeaturedNews() {
-  const { theNews, baseURL } = useContext(NewsContext);
-  console.log(theNews);
+  const { theNews } = useContext(NewsContext);
+  const [latestOne] = theNews;
 
   return (
-    <div>
-      {theNews.length > 0 && (
-        <div key={ theNews[0].id }>
-          <h1>{theNews[0].titulo}</h1>
+    <Container>
+      <ImgWrapper>
+        {theNews.length && (
           <img
-            src={ baseURL + theNews[0].imagens.image_intro }
-            alt={ `Illustration for ${theNews[0].titulo}` }
+            src={ latestOne.imagens.image_intro }
+            alt={ `Illustration for ${latestOne.titulo}` }
           />
-          <p>{theNews[0].introducao}</p>
-        </div>
-      )}
-    </div>
+        )}
+      </ImgWrapper>
+      <Card />
+    </Container>
   );
 }
 
