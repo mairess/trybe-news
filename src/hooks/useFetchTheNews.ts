@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { TheNewsType } from '../types';
 import parseImages from '../helpers/parseImages';
+import convertImagesToLink from '../helpers/convertImagesToLink';
 
 function useFetchTheNews() {
   const [theNews, setTheNews] = useState<TheNewsType>([]);
   const [loading, setLoading] = useState(false);
 
   const API = 'https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=100';
-  const baseURL = 'https://agenciadenoticias.ibge.gov.br/';
 
   useEffect(() => {
     const fetchTheNews = async () => {
@@ -17,6 +17,7 @@ function useFetchTheNews() {
         const data = await response.json();
 
         parseImages(data);
+        convertImagesToLink(data.items);
 
         console.log(data);
         setTheNews(data.items);
@@ -29,7 +30,7 @@ function useFetchTheNews() {
     fetchTheNews();
   }, []);
 
-  return { theNews, setTheNews, loading, baseURL };
+  return { theNews, setTheNews, loading };
 }
 
 export default useFetchTheNews;

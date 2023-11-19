@@ -4,7 +4,7 @@ import Card from '../card';
 import { Container, ImgWrapper } from './style';
 
 function FeaturedNews() {
-  const { theNews, baseURL } = useContext(NewsContext);
+  const { theNews } = useContext(NewsContext);
   const [latestOne] = theNews;
 
   return (
@@ -12,7 +12,7 @@ function FeaturedNews() {
       <ImgWrapper>
         {theNews.length && (
           <img
-            src={ baseURL + latestOne.imagens.image_intro }
+            src={ latestOne.imagens.image_intro }
             alt={ `Illustration for ${latestOne.titulo}` }
           />
         )}

@@ -6,7 +6,7 @@ type FilterProviderProps = {
 };
 
 function NewsProvider({ children }: FilterProviderProps) {
-  const { theNews, setTheNews, loading, baseURL } = useFetchTheNews();
+  const { theNews, setTheNews, loading } = useFetchTheNews();
 
   return (
     <NewsContext.Provider
@@ -14,7 +14,6 @@ function NewsProvider({ children }: FilterProviderProps) {
         theNews,
         setTheNews,
         loading,
-        baseURL,
       } }
     >
       {children}
