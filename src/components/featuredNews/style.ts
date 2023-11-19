@@ -7,9 +7,9 @@ export const Container = styled.div`
     padding: 0.4rem;
     flex-wrap: wrap;
 
-    /* @media screen and (max-width: 480px) {
+    @media screen and (max-width: 480px) {
         flex-direction: column;
-    } */
+    }
 `;
 
 export const ImgWrapper = styled.div`
@@ -23,5 +23,19 @@ export const ImgWrapper = styled.div`
         border: 1px solid rgba(0, 0, 0, 0.20);
         background: lightgray 50%;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    @media screen and (max-width: 480px) {
+        flex-direction: column;
+
+        img {
+            width: 350px;
+        }
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 1024px) {
+        img {
+            width: 470px;
+        }
     }
 `;

@@ -6,13 +6,10 @@ export const Container = styled.div`
     justify-content: space-around;
     padding: 0.4rem;
     flex-wrap: wrap;
-
-    /* @media screen and (max-width: 480px) {
-        flex-direction: column;
-    } */
 `;
 
 export const NewsHeadline = styled.div`
+    text-align: justify;
     flex-shrink: 0;
     color: var(--Text, #2A2A2A);
     font-family: IBM Plex Serif;
@@ -24,6 +21,7 @@ export const NewsHeadline = styled.div`
 `;
 
 export const NewsLead = styled.div`
+    text-align: justify;
     flex-shrink: 0;
     color: var(--Text, #2A2A2A);
     font-family: Poppins;
