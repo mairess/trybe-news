@@ -5,7 +5,7 @@ export type ButtonProps = {
   isLatestNews?: boolean,
 };
 
-function FavoriteButton({ isLatestNews = false }: ButtonProps) {
+function ButtonFavorite({ isLatestNews = false }: ButtonProps) {
   return (
     <Container style={ isLatestNews ? { justifyContent: 'space-between' } : {} }>
       {isLatestNews && (
@@ -20,4 +20,4 @@ function FavoriteButton({ isLatestNews = false }: ButtonProps) {
   );
 }
 
-export default FavoriteButton;
+export default ButtonFavorite;

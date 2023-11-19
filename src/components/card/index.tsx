@@ -1,25 +1,17 @@
 import { useContext } from 'react';
-import { Container, NewsHeadline, NewsLead, ImgWrapper } from './style';
+import { Container, NewsHeadline, NewsLead } from './style';
 import NewsContext from '../../context/NewsContext';
-import Button from '../button';
-import FavoriteButton from '../favoriteButton';
+import ButtonReadTheNews from '../buttonReadTheNews';
+import ButtonFavorite from '../buttonFavorite';
 
 function Card() {
-  const { theNews, baseURL } = useContext(NewsContext);
+  const { theNews } = useContext(NewsContext);
   const [latestOne] = theNews;
 
   return (
     <Container>
-      <ImgWrapper>
-        {theNews.length && (
-          <img
-            src={ baseURL + latestOne.imagens.image_intro }
-            alt={ `Illustration for ${latestOne.titulo}` }
-          />
-        )}
-      </ImgWrapper>
       <div>
-        <FavoriteButton isLatestNews />
+        <ButtonFavorite isLatestNews />
         {latestOne && (
           <>
             <NewsHeadline>
@@ -28,7 +20,7 @@ function Card() {
             <NewsLead>
               <p>{latestOne.introducao}</p>
             </NewsLead>
-            <Button
+            <ButtonReadTheNews
               label="Leia a notícia aqui"
             />
           </>

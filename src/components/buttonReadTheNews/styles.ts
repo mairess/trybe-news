@@ -38,7 +38,7 @@ export const StyledButton = styled.button`
 
 export const NewsTimestamp = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 7.875rem;
     height: 1.25rem;

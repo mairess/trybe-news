@@ -7,7 +7,7 @@ type ButtonProps = {
   label: string,
 };
 
-function Button({ label }: ButtonProps) {
+function ButtonReadTheNews({ label }: ButtonProps) {
   const { theNews } = useContext(NewsContext);
   const [latestOne] = theNews;
   return (
@@ -22,4 +22,4 @@ function Button({ label }: ButtonProps) {
   );
 }
 
-export default Button;
+export default ButtonReadTheNews;
