@@ -1,4 +1,4 @@
-import { StyledButton } from './styles';
+import { StyledButton } from './style';
 
 function ButtonReadTheNews() {
   return (

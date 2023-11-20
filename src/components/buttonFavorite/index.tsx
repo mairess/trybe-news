@@ -1,4 +1,4 @@
-import { StyledButton } from './styles';
+import { StyledButton } from './style';
 import favorite from '../../assets/empty_favorite_icon.svg';
 
 function ButtonFavorite() {
