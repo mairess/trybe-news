@@ -1,9 +1,13 @@
 import { StyledButton } from './style';
 import favorite from '../../assets/empty_favorite_icon.svg';
 
-function ButtonFavorite() {
+type ButtonFavoriteProps = {
+  onClick: () => void,
+};
+
+function ButtonFavorite({ onClick }: ButtonFavoriteProps) {
   return (
-    <StyledButton>
+    <StyledButton onClick={ onClick }>
       <img src={ favorite } alt="favorite button" />
     </StyledButton>
   );
