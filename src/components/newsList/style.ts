@@ -6,8 +6,17 @@ export const Container = styled.div`
     align-items: center;
     flex-wrap: wrap;
     gap: 3rem;
-    /* margin: 2rem; */
+    margin-top: 1rem;
 `;
+
+export const CardWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    /* flex-shrink: 0; */
+    background-color: #FFF;
+    filter: drop-shadow(0px 2px 14px rgba(42, 42, 42, 0.24));
+`;
+
 export const Line = styled.div`
     margin: 1rem 0;
     height: 0.0625rem;
@@ -19,5 +28,6 @@ export const Line = styled.div`
 export const ButtonWrapper = styled.div`
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: start;
+    padding: 0 0.5rem 0.5rem;
 `;

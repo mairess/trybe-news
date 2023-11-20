@@ -6,6 +6,7 @@ export const Container = styled.div`
     justify-content: space-around;
     padding: 0.4rem;
     flex-wrap: wrap;
+    margin-top: 1rem;
 `;
 
 export const CardWrapper = styled.div`

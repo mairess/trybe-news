@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
-import { Container, Line, ButtonWrapper } from './style';
+import { Container, Line, ButtonWrapper, CardWrapper } from './style';
 import Card from '../card';
 import CardFooter from '../card/CardFooter';
 import ButtonFavorite from '../buttonFavorite';
@@ -12,7 +12,7 @@ function NewsList() {
       {theNews && (
         theNews.slice(1).map((news) => {
           return (
-            <div key={ news.id }>
+            <CardWrapper key={ news.id }>
               <Card
                 title={ news.titulo }
                 description={ news.introducao }
@@ -22,7 +22,7 @@ function NewsList() {
               <ButtonWrapper>
                 <ButtonFavorite />
               </ButtonWrapper>
-            </div>
+            </CardWrapper>
           );
         })
       )}
