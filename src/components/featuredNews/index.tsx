@@ -10,7 +10,6 @@ import { NewsType } from '../../types';
 function FeaturedNews() {
   const { theNews } = useContext(NewsContext);
   const [latestOne] = theNews;
-  // const [isfav, setIsFav] = useState(false);
 
   const newFavorite = {
     id: latestOne?.id,
@@ -21,7 +20,6 @@ function FeaturedNews() {
 
   const storedFavorites = localStorage.getItem('favorites');
   const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
-  // const isFavorite = parsedFavorites.some((fav: NewsType) => fav.id === latestOne?.id);
   const [isFavorite, setIsFavorite] = useState(parsedFavorites
     .some((fav: NewsType) => fav.id === latestOne?.id));
 
@@ -51,7 +49,10 @@ function FeaturedNews() {
         <CardWrapper>
           <LatestFavoriteWrapper>
             <LatestNewsStamp />
-            <ButtonFavorite onClick={ () => toggleFavorite() } />
+            <ButtonFavorite
+              isFav={ isFavorite }
+              onClick={ () => toggleFavorite() }
+            />
           </LatestFavoriteWrapper>
           <Card
             key={ latestOne.id }

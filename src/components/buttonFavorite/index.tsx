@@ -1,14 +1,16 @@
 import { StyledButton } from './style';
-import favorite from '../../assets/empty_favorite_icon.svg';
+import emptyIcon from '../../assets/empty_favorite_icon.svg';
+import filledIcon from '../../assets/filled_favorite_icon.svg';
 
 type ButtonFavoriteProps = {
   onClick: () => void,
+  isFav: boolean,
 };
 
-function ButtonFavorite({ onClick }: ButtonFavoriteProps) {
+function ButtonFavorite({ onClick, isFav }: ButtonFavoriteProps) {
   return (
     <StyledButton onClick={ onClick }>
-      <img src={ favorite } alt="favorite button" />
+      <img src={ isFav ? filledIcon : emptyIcon } alt="favorite button" />
     </StyledButton>
   );
 }
