@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
-import { Container, Line } from './style';
+import { Container, Line, ButtonWrapper } from './style';
 import Card from '../card';
 import CardFooter from '../card/CardFooter';
+import ButtonFavorite from '../buttonFavorite';
 
 function NewsList() {
   const { theNews } = useContext(NewsContext);
@@ -18,6 +19,9 @@ function NewsList() {
               />
               <CardFooter publicatiopnDate={ news.data_publicacao } />
               <Line />
+              <ButtonWrapper>
+                <ButtonFavorite />
+              </ButtonWrapper>
             </div>
           );
         })
