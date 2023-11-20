@@ -1,12 +1,10 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
 import Card from '../card';
-import { Container, ImgWrapper, CardWrapper, LatestFavoriteWrapper,
-  ReadTheNesTimestampWrapper } from './style';
+import { Container, ImgWrapper, CardWrapper, LatestFavoriteWrapper } from './style';
 import LatestNewsStamp from '../latestNewsStamp';
 import ButtonFavorite from '../buttonFavorite';
-import Timestamp from '../timestamp';
-import ButtonReadTheNews from '../buttonReadTheNews';
+import CardFooter from '../card/CardFooter';
 
 function FeaturedNews() {
   const { theNews } = useContext(NewsContext);
@@ -32,10 +30,7 @@ function FeaturedNews() {
             title={ latestOne.titulo }
             description={ latestOne.introducao }
           />
-          <ReadTheNesTimestampWrapper>
-            <Timestamp publicationDate={ latestOne.data_publicacao } />
-            <ButtonReadTheNews />
-          </ReadTheNesTimestampWrapper>
+          <CardFooter publicatiopnDate={ latestOne.data_publicacao } />
         </CardWrapper>
       </Container>
     )

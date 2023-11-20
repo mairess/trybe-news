@@ -39,3 +39,10 @@ export const NewsLead = styled.div`
         line-height: 165%;
     }
 `;
+
+export const ReadTheNesTimestampWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .4rem;
+`;
