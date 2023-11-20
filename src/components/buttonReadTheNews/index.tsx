@@ -1,16 +1,10 @@
-import { StyledButton, Container } from './styles';
+import { StyledButton } from './styles';
 
-type ButtonProps = {
-  label: string,
-};
-
-function ButtonReadTheNews({ label }: ButtonProps) {
+function ButtonReadTheNews() {
   return (
-    <Container>
-      <StyledButton>
-        <p>{label}</p>
-      </StyledButton>
-    </Container>
+    <StyledButton>
+      <p>Leia a notícia aqui</p>
+    </StyledButton>
   );
 }
 
