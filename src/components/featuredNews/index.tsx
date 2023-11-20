@@ -12,7 +12,7 @@ function FeaturedNews() {
       <ImgWrapper>
         {theNews.length && (
           <img
-            src={ latestOne.imagens.image_intro }
+            src={ latestOne.imagens.image_fulltext }
             alt={ `Illustration for ${latestOne.titulo}` }
           />
         )}
@@ -22,10 +22,6 @@ function FeaturedNews() {
           key={ latestOne.id }
           title={ latestOne.titulo }
           description={ latestOne.introducao }
-          buttonLabel="Leia a notícia aqui"
-          isFeatured={ false }
-          isLatestNews
-          publicationDate={ latestOne.data_publicacao }
         />
       )}
     </Container>
