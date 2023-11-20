@@ -1,17 +1,12 @@
-import { StyledButton, NewsTimestamp, Container } from './styles';
-import getPublicationDifferenceTime from '../../helpers/showPublicationTimeDifference';
+import { StyledButton, Container } from './styles';
 
 type ButtonProps = {
   label: string,
-  publicationDate: string,
 };
 
-function ButtonReadTheNews({ label, publicationDate }: ButtonProps) {
+function ButtonReadTheNews({ label }: ButtonProps) {
   return (
     <Container>
-      <NewsTimestamp>
-        <p>{getPublicationDifferenceTime(publicationDate)}</p>
-      </NewsTimestamp>
       <StyledButton>
         <p>{label}</p>
       </StyledButton>
