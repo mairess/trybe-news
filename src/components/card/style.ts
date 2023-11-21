@@ -3,12 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
     min-height: 21.875rem;
     max-width: 33.75rem;
-
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    padding: 0.4rem;
+    padding: 0 1rem;
     flex-wrap: wrap;
 `;
 
@@ -24,6 +23,12 @@ export const NewsHeadline = styled.div`
         font-weight: 600;
         line-height: normal;
     }
+    
+    @media screen and (max-width: 480px) {
+        h1 {
+            font-size: 1.4rem;
+        }
+    }
 `;
 
 export const NewsLead = styled.div`
@@ -38,6 +43,12 @@ export const NewsLead = styled.div`
         font-weight: 400;
         line-height: 165%;
     }
+
+    @media screen and (max-width: 480px) {
+        p {
+            font-size: 0.75rem;
+        }
+    }
 `;
 
 export const ReadTheNesTimestampWrapper = styled.div`
@@ -45,4 +56,5 @@ export const ReadTheNesTimestampWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0 .4rem;
+    padding: 0 1rem;
 `;

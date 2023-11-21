@@ -1,4 +1,3 @@
-// NewsItem.js
 import { Line, ButtonWrapper, CardWrapper } from './style';
 import Card from '../card';
 import CardFooter from '../card/CardFooter';

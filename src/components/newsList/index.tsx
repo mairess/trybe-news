@@ -1,4 +1,3 @@
-// NewsList.js
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
 import { Container } from './style';

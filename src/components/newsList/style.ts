@@ -12,9 +12,9 @@ export const Container = styled.div`
 export const CardWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    /* flex-shrink: 0; */
     background-color: #FFF;
     filter: drop-shadow(0px 2px 14px rgba(42, 42, 42, 0.24));
+    margin: 0 1rem;
 `;
 
 export const Line = styled.div`
