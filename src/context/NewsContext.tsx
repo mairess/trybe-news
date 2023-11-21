@@ -5,6 +5,8 @@ type ContextType = {
   theNews: TheNewsType,
   setTheNews: (news: TheNewsType) => void,
   loading: boolean,
+  newsRelease: TheNewsType,
+  newsNoticia: TheNewsType,
 };
 
 const NewsContext = createContext({} as ContextType);

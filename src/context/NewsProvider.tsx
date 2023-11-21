@@ -7,6 +7,8 @@ type FilterProviderProps = {
 
 function NewsProvider({ children }: FilterProviderProps) {
   const { theNews, setTheNews, loading } = useFetchTheNews();
+  const newsRelease = theNews.filter((release) => release.tipo === 'Release');
+  const newsNoticia = theNews.filter((release) => release.tipo === 'Notícia');
 
   return (
     <NewsContext.Provider
@@ -14,6 +16,8 @@ function NewsProvider({ children }: FilterProviderProps) {
         theNews,
         setTheNews,
         loading,
+        newsRelease,
+        newsNoticia,
       } }
     >
       {children}
