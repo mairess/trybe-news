@@ -1,17 +1,42 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import NewsContext from '../../context/NewsContext';
-import { Container, ContainerButtons } from './style';
+import { Container, ContainerButtons, Button } from './style';
 
 function FilterBar() {
   const { theNews } = useContext(NewsContext);
+  const [selectedButton, setSelectedButton] = useState('');
+
+  const handleClick = (buttonName: string) => {
+    setSelectedButton(buttonName);
+  };
 
   return (
     <Container>
       <ContainerButtons>
-        <div>Mais recentes</div>
-        <div>Release</div>
-        <div>Notícias</div>
-        <div>Favoritas</div>
+        <Button
+          className={ selectedButton === 'latests' ? 'selected' : '' }
+          onClick={ () => handleClick('latests') }
+        >
+          Mais recentes
+        </Button>
+        <Button
+          className={ selectedButton === 'releases' ? 'selected' : '' }
+          onClick={ () => handleClick('releases') }
+        >
+          Release
+        </Button>
+        <Button
+          className={ selectedButton === 'news' ? 'selected' : '' }
+          onClick={ () => handleClick('news') }
+        >
+          Notícias
+        </Button>
+        <Button
+          className={ selectedButton === 'favorites' ? 'selected' : '' }
+          onClick={ () => handleClick('favorites') }
+        >
+          Favoritas
+        </Button>
       </ContainerButtons>
       {/* <div>Change view</div> */}
     </Container>
