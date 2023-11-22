@@ -1,39 +1,34 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
 import { Container, ContainerButtons, Button } from './style';
 
 function FilterBar() {
-  const { theNews } = useContext(NewsContext);
-  const [selectedButton, setSelectedButton] = useState('');
-
-  const handleClick = (buttonName: string) => {
-    setSelectedButton(buttonName);
-  };
+  const { filter, setFilter } = useContext(NewsContext);
 
   return (
     <Container>
       <ContainerButtons>
         <Button
-          className={ selectedButton === 'latests' ? 'selected' : '' }
-          onClick={ () => handleClick('latests') }
+          className={ filter === 'latests' ? 'selected' : '' }
+          onClick={ () => setFilter('latests') }
         >
           Mais recentes
         </Button>
         <Button
-          className={ selectedButton === 'releases' ? 'selected' : '' }
-          onClick={ () => handleClick('releases') }
+          className={ filter === 'releases' ? 'selected' : '' }
+          onClick={ () => setFilter('releases') }
         >
           Release
         </Button>
         <Button
-          className={ selectedButton === 'news' ? 'selected' : '' }
-          onClick={ () => handleClick('news') }
+          className={ filter === 'news' ? 'selected' : '' }
+          onClick={ () => setFilter('news') }
         >
           Notícias
         </Button>
         <Button
-          className={ selectedButton === 'favorites' ? 'selected' : '' }
-          onClick={ () => handleClick('favorites') }
+          className={ filter === 'favorites' ? 'selected' : '' }
+          onClick={ () => setFilter('favorites') }
         >
           Favoritas
         </Button>

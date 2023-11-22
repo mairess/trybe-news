@@ -5,16 +5,13 @@ import NewsItem from './NewsItem';
 import FilterBar from '../filterBar';
 
 function NewsList() {
-  const { theNews } = useContext(NewsContext);
-
-  const newsRelease = theNews.filter((release) => release.tipo === 'Release');
-  const newsNoticia = theNews.filter((release) => release.tipo === 'Notícia');
+  const { filteredContent } = useContext(NewsContext);
 
   return (
     <>
       <FilterBar />
       <Container>
-        {theNews && theNews
+        {filteredContent && filteredContent
           .slice(1).map((news) => <NewsItem key={ news.id } news={ news } />)}
       </Container>
     </>

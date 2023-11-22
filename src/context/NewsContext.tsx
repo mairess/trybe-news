@@ -5,8 +5,9 @@ type ContextType = {
   theNews: TheNewsType,
   setTheNews: (news: TheNewsType) => void,
   loading: boolean,
-  newsRelease: TheNewsType,
-  newsNoticia: TheNewsType,
+  filter: string,
+  setFilter: (filter: string) => void,
+  filteredContent: TheNewsType,
 };
 
 const NewsContext = createContext({} as ContextType);
