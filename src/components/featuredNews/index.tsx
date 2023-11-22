@@ -6,11 +6,14 @@ import LatestNewsStamp from '../latestNewsStamp';
 import ButtonFavorite from '../buttonFavorite';
 import CardFooter from '../card/CardFooter';
 import useFavorites from '../../hooks/useFavorite';
+import { NewsType } from '../../types';
 
 function FeaturedNews() {
-  const { theNews } = useContext(NewsContext);
+  const { theNews, favToRender } = useContext(NewsContext);
   const [latestOne] = theNews;
   const { isFavorite, toggleFavorite } = useFavorites(latestOne?.id);
+
+  const isFavToRender = favToRender.some((fav: NewsType) => fav.id === latestOne.id);
 
   return (
     latestOne && (
@@ -26,7 +29,7 @@ function FeaturedNews() {
           <LatestFavoriteWrapper>
             <LatestNewsStamp />
             <ButtonFavorite
-              isFav={ isFavorite }
+              isFav={ isFavToRender }
               onClick={ () => toggleFavorite() }
             />
           </LatestFavoriteWrapper>

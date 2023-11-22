@@ -9,7 +9,7 @@ function useFavorites(newsId: number) {
   useEffect(() => {
     const storedFavorites = localStorage.getItem('favorites');
     const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
-    setIsFavorite(parsedFavorites.some((fav: NewsType) => fav.id === newsId));
+    setIsFavorite(parsedFavorites.some((fav: NewsType) => fav?.id === newsId));
   }, [newsId]);
 
   const toggleFavorite = () => {
@@ -18,12 +18,12 @@ function useFavorites(newsId: number) {
 
     if (isFavorite) {
       const updatedFavorites = parsedFavorites
-        .filter((fav: NewsType) => fav.id !== newsId);
+        .filter((fav: NewsType) => fav?.id !== newsId);
       localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
       setFavToRender(updatedFavorites);
       setIsFavorite(false);
     } else {
-      const newFavorite = theNews.find((news) => news.id === newsId);
+      const newFavorite = theNews.find((news) => news?.id === newsId);
       localStorage
         .setItem('favorites', JSON.stringify([...parsedFavorites, newFavorite]));
       setFavToRender([...parsedFavorites, newFavorite]);
