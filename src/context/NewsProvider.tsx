@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useFetchTheNews from '../hooks/useFetchTheNews';
 import NewsContext from './NewsContext';
+import { TheNewsType } from '../types';
 
 type FilterProviderProps = {
   children: React.ReactNode,
@@ -8,7 +9,8 @@ type FilterProviderProps = {
 
 function NewsProvider({ children }: FilterProviderProps) {
   const { theNews, setTheNews, loading } = useFetchTheNews();
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState('latests');
+  const [favToRender, setFavToRender] = useState<TheNewsType>([]);
 
   let filteredContent = theNews.filter((news) => {
     if (filter === 'latests') {
@@ -40,6 +42,8 @@ function NewsProvider({ children }: FilterProviderProps) {
         filter,
         setFilter,
         filteredContent,
+        favToRender,
+        setFavToRender,
       } }
     >
       {children}

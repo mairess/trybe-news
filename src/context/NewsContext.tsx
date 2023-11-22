@@ -8,6 +8,8 @@ type ContextType = {
   filter: string,
   setFilter: (filter: string) => void,
   filteredContent: TheNewsType,
+  favToRender: TheNewsType,
+  setFavToRender: (news: TheNewsType) => void,
 };
 
 const NewsContext = createContext({} as ContextType);
