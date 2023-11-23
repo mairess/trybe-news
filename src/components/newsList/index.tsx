@@ -1,33 +1,17 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
-import { Container, ButtonLoadMore } from './style';
+import { NewsItemWrapper } from './style';
 import NewsItem from './NewsItem';
 import FilterBar from '../filterBar';
-import { NewsType } from '../../types';
+import ButtonLoadMore from '../buttonLoadMore';
 
 function NewsList() {
-  const { filteredContent, favToRender, filter,
-    handleLoadMoreNews, loadMoreNews } = useContext(NewsContext);
-
-  let hideTheButton = loadMoreNews >= filteredContent.length;
-
-  if (filter === 'releases') {
-    const arraySize = filteredContent
-      .filter((content: NewsType) => content.tipo === 'Release');
-    hideTheButton = loadMoreNews >= arraySize.length;
-    console.log(arraySize.length);
-  }
-
-  if (filter === 'news') {
-    const arraySize = filteredContent
-      .filter((content: NewsType) => content.tipo === 'Notícia');
-    hideTheButton = loadMoreNews >= arraySize.length;
-  }
+  const { filteredContent, favToRender, filter, loadMoreNews } = useContext(NewsContext);
 
   return (
     <>
       <FilterBar />
-      <Container>
+      <NewsItemWrapper>
         {filter === 'favorites' ? (
           favToRender && favToRender
             .map((news) => <NewsItem key={ news.id } news={ news } />)
@@ -36,14 +20,8 @@ function NewsList() {
             .slice(1, loadMoreNews)
             .map((news) => <NewsItem key={ news.id } news={ news } />)
         )}
-        {!hideTheButton && (
-          <ButtonLoadMore
-            onClick={ () => handleLoadMoreNews() }
-          >
-            Mais Notícias
-          </ButtonLoadMore>
-        )}
-      </Container>
+      </NewsItemWrapper>
+      <ButtonLoadMore />
     </>
   );
 }

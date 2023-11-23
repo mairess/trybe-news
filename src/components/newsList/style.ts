@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const NewsItemWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,6 @@ export const ButtonLoadMore = styled.button`
     width: 13.75rem;
     height: 3.75rem;
     flex-shrink: 0;
-
     border-radius: 0.125rem;
     border: 1px solid #C31815;
     opacity: 0.28;
@@ -48,7 +47,14 @@ export const ButtonLoadMore = styled.button`
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 0.9375rem; /* 107.143% */
+    line-height: 0.9375rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+`;
+
+export const ButtonLoadMoreWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
 `;

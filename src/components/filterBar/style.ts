@@ -50,6 +50,7 @@ export const Button = styled.button`
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    cursor: pointer;
 
     &:hover {
         border-bottom-color: #C31815;
