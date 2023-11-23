@@ -31,5 +31,5 @@ Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir uma issue
 
 ## Licença 📝
 
-Este projeto é licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT)
+Este projeto é licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT) você poder ler o aqurivo [aqui](https://github.com/mairess/trybe-news/blob/main/LICENSE.txt)
 
