@@ -13,7 +13,14 @@ Este é um projeto em React que visa transformar dados em notícias. Utilizamos 
 
 ## Tecnologias Utilizadas 🛠️
 
-- **React**: O projeto foi criado usando React para construir a interface do usuário.
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+- **React**: Utilizamos o React com TypeScript para construir a interface do usuário. O React nos permite criar interfaces de usuário interativas e eficientes.
+
+- **Context API**: A Context API do React foi usada para gerenciar o estado global do aplicativo. Isso nos permite compartilhar dados facilmente entre diferentes componentes sem a necessidade de prop drilling.
+
+- **Custom Hooks**: Utilizamos hooks personalizados para encapsular a lógica do componente que pode ser reutilizada em vários componentes. Isso ajuda a manter nosso código DRY (Don't Repeat Yourself) e facilita a manutenção.
+
 - **Responsividade**: O aplicativo é totalmente responsivo e pode ser usado em dispositivos de diferentes tamanhos.
 
 ## Como Executar o Projeto 🚀
