@@ -7,6 +7,7 @@ export const Container = styled.div`
     flex-wrap: wrap;
     gap: 3rem;
     margin-top: 1rem;
+    padding-bottom: 1rem;
 `;
 
 export const CardWrapper = styled.div`

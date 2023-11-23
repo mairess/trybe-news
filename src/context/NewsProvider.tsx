@@ -12,18 +12,26 @@ function NewsProvider({ children }: FilterProviderProps) {
   const [filter, setFilter] = useState('latests');
   const [favToRender, setFavToRender] = useState<TheNewsType>([]);
   const [filteredContent, setFilteredContent] = useState<TheNewsType>([]);
+  const [loadMoreNews, setLoadMoreNews] = useState(10);
+
+  function handleLoadMoreNews() {
+    setLoadMoreNews((prev) => prev + 10);
+  }
 
   useEffect(() => {
     let filtered = theNews.filter((news) => {
       if (filter === 'latests') {
+        setLoadMoreNews(10);
         return theNews;
       }
 
       if (filter === 'releases') {
+        setLoadMoreNews(10);
         return news.tipo === 'Release';
       }
 
       if (filter === 'news') {
+        setLoadMoreNews(10);
         return news.tipo === 'Notícia';
       }
       return true;
@@ -49,6 +57,8 @@ function NewsProvider({ children }: FilterProviderProps) {
         filteredContent,
         favToRender,
         setFavToRender,
+        handleLoadMoreNews,
+        loadMoreNews,
       } }
     >
       {children}

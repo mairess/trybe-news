@@ -11,7 +11,7 @@ import { NewsType } from '../../types';
 function FeaturedNews() {
   const { theNews, favToRender } = useContext(NewsContext);
   const [latestOne] = theNews;
-  const { isFavorite, toggleFavorite } = useFavorites(latestOne?.id);
+  const { /* isFavorite, */ toggleFavorite } = useFavorites(latestOne?.id);
 
   const isFavToRender = favToRender.some((fav: NewsType) => fav.id === latestOne.id);
 

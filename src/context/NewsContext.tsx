@@ -10,6 +10,8 @@ type ContextType = {
   filteredContent: TheNewsType,
   favToRender: TheNewsType,
   setFavToRender: (news: TheNewsType) => void,
+  handleLoadMoreNews: () => void,
+  loadMoreNews: number,
 };
 
 const NewsContext = createContext({} as ContextType);
