@@ -19,7 +19,6 @@ function useFetchTheNews() {
         parseImages(data);
         convertImagesToLink(data.items);
 
-        console.log(data.items);
         setTheNews(data.items);
       } catch (error: any) {
         console.log(`Request error: ${error.message}`);

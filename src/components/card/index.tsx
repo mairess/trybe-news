@@ -1,31 +1,19 @@
-import { useContext } from 'react';
 import { Container, NewsHeadline, NewsLead } from './style';
-import NewsContext from '../../context/NewsContext';
-import ButtonReadTheNews from '../buttonReadTheNews';
-import ButtonFavorite from '../buttonFavorite';
 
-function Card() {
-  const { theNews } = useContext(NewsContext);
-  const [latestOne] = theNews;
+type CardProps = {
+  title: string,
+  description: string,
+};
 
+function Card({ title, description }: CardProps) {
   return (
     <Container>
-      <div>
-        <ButtonFavorite isLatestNews />
-        {latestOne && (
-          <>
-            <NewsHeadline>
-              <h1>{latestOne.titulo}</h1>
-            </NewsHeadline>
-            <NewsLead>
-              <p>{latestOne.introducao}</p>
-            </NewsLead>
-            <ButtonReadTheNews
-              label="Leia a notícia aqui"
-            />
-          </>
-        )}
-      </div>
+      <NewsHeadline>
+        <h1>{title}</h1>
+      </NewsHeadline>
+      <NewsLead>
+        <p>{description}</p>
+      </NewsLead>
     </Container>
   );
 }

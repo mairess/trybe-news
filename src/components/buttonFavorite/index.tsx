@@ -1,22 +1,17 @@
-import { Container, StyledButton, LatestNewsStamp } from './styles';
-import favorite from '../../assets/empty_favorite_icon.svg';
+import { Button } from './style';
+import emptyIcon from '../../assets/empty_favorite_icon.svg';
+import filledIcon from '../../assets/filled_favorite_icon.svg';
 
-export type ButtonProps = {
-  isLatestNews?: boolean,
+type ButtonFavoriteProps = {
+  onClick: () => void,
+  isFav: boolean,
 };
 
-function ButtonFavorite({ isLatestNews = false }: ButtonProps) {
+function ButtonFavorite({ onClick, isFav }: ButtonFavoriteProps) {
   return (
-    <Container style={ isLatestNews ? { justifyContent: 'space-between' } : {} }>
-      {isLatestNews && (
-        <LatestNewsStamp>
-          <p>Notícia mais recente</p>
-        </LatestNewsStamp>
-      )}
-      <StyledButton>
-        <img src={ favorite } alt="favorite button" />
-      </StyledButton>
-    </Container>
+    <Button onClick={ onClick }>
+      <img src={ isFav ? filledIcon : emptyIcon } alt="favorite button" />
+    </Button>
   );
 }
 

@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: .5rem 0;
-`;
-
-export const StyledButton = styled.button`
+export const Button = styled.button`
     display: flex;
     width: 10.4375rem;
     height: 2.25rem;
@@ -31,23 +24,7 @@ export const StyledButton = styled.button`
         font-size: 0.875rem;
         font-style: normal;
         font-weight: 700;
-        line-height: 165%; /* 1.44375rem */
+        line-height: 165%;
     }
 
-`;
-
-export const NewsTimestamp = styled.div`
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 7.875rem;
-    height: 1.25rem;
-    flex-shrink: 0;
-
-    color: var(--Text, #2A2A2A);
-    font-family: Poppins;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 165%;
 `;

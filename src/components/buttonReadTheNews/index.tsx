@@ -1,24 +1,17 @@
-import { useContext } from 'react';
-import { StyledButton, NewsTimestamp, Container } from './styles';
-import NewsContext from '../../context/NewsContext';
-import getPublicationDifferenceTime from '../../helpers/showPublicationTimeDifference';
+import { Button } from './style';
 
-type ButtonProps = {
-  label: string,
+type ButtonReadTheNewsProps = {
+  linkToRead: string
 };
 
-function ButtonReadTheNews({ label }: ButtonProps) {
-  const { theNews } = useContext(NewsContext);
-  const [latestOne] = theNews;
+function ButtonReadTheNews({ linkToRead }: ButtonReadTheNewsProps) {
+  function HandleNavigateTo() {
+    window.open(linkToRead, '_blank');
+  }
   return (
-    <Container>
-      <NewsTimestamp>
-        <p>{getPublicationDifferenceTime(latestOne.data_publicacao)}</p>
-      </NewsTimestamp>
-      <StyledButton>
-        <p>{label}</p>
-      </StyledButton>
-    </Container>
+    <Button onClick={ () => HandleNavigateTo() }>
+      <p>Leia a notícia aqui</p>
+    </Button>
   );
 }
 

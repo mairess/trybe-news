@@ -5,6 +5,13 @@ type ContextType = {
   theNews: TheNewsType,
   setTheNews: (news: TheNewsType) => void,
   loading: boolean,
+  filter: string,
+  setFilter: (filter: string) => void,
+  filteredContent: TheNewsType,
+  favToRender: TheNewsType,
+  setFavToRender: (news: TheNewsType) => void,
+  handleLoadMoreNews: () => void,
+  loadMoreNews: number,
 };
 
 const NewsContext = createContext({} as ContextType);

@@ -6,10 +6,18 @@ export const Container = styled.div`
     justify-content: space-around;
     padding: 0.4rem;
     flex-wrap: wrap;
+    margin-top: 1rem;
+`;
 
-    @media screen and (max-width: 480px) {
-        flex-direction: column;
-    }
+export const CardWrapper = styled.div`
+    padding-top: 1rem;
+`;
+
+export const LatestFavoriteWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
 `;
 
 export const ImgWrapper = styled.div`
@@ -24,18 +32,16 @@ export const ImgWrapper = styled.div`
         background: lightgray 50%;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
-
-    @media screen and (max-width: 480px) {
-        flex-direction: column;
-
+    
+    @media screen and (width <= 480px) {
         img {
-            width: 21.875rem;
+            width: 21rem;
         }
     }
 
-    @media screen and (min-width: 481px) and (max-width: 1024px) {
+    @media screen and (481px <= width <= 1280px) {
         img {
-            width: 29.375rem;
+            width: 28.375rem;
         }
     }
 `;

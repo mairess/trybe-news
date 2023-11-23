@@ -1,24 +1,50 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
 import Card from '../card';
-import { Container, ImgWrapper } from './style';
+import { Container, ImgWrapper, CardWrapper, LatestFavoriteWrapper } from './style';
+import LatestNewsStamp from '../latestNewsStamp';
+import ButtonFavorite from '../buttonFavorite';
+import CardFooter from '../card/CardFooter';
+import useFavorites from '../../hooks/useFavorite';
+import { NewsType } from '../../types';
 
 function FeaturedNews() {
-  const { theNews } = useContext(NewsContext);
+  const { theNews, favToRender } = useContext(NewsContext);
   const [latestOne] = theNews;
+  const { /* isFavorite, */ toggleFavorite } = useFavorites(latestOne?.id);
+
+  const isFavToRender = favToRender.some((fav: NewsType) => fav.id === latestOne.id);
 
   return (
-    <Container>
-      <ImgWrapper>
-        {theNews.length && (
+    latestOne && (
+      <Container>
+        <ImgWrapper>
           <img
-            src={ latestOne.imagens.image_intro }
+            src={ latestOne.imagens.image_fulltext }
             alt={ `Illustration for ${latestOne.titulo}` }
           />
-        )}
-      </ImgWrapper>
-      <Card />
-    </Container>
+        </ImgWrapper>
+
+        <CardWrapper>
+          <LatestFavoriteWrapper>
+            <LatestNewsStamp />
+            <ButtonFavorite
+              isFav={ isFavToRender }
+              onClick={ () => toggleFavorite() }
+            />
+          </LatestFavoriteWrapper>
+          <Card
+            key={ latestOne.id }
+            title={ latestOne.titulo }
+            description={ latestOne.introducao }
+          />
+          <CardFooter
+            linkToRead={ latestOne.link }
+            publicatiopnDate={ latestOne.data_publicacao }
+          />
+        </CardWrapper>
+      </Container>
+    )
   );
 }
 
