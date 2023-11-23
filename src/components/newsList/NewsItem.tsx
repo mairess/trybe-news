@@ -10,7 +10,7 @@ type NewsItemProps = {
 };
 
 function NewsItem({ news }: NewsItemProps) {
-  const { id, titulo, introducao, data_publicacao: publicacao } = news;
+  const { id, titulo, introducao, data_publicacao: publicacao, link } = news;
   const { isFavorite, toggleFavorite } = useFavorites(id);
 
   return (
@@ -19,7 +19,10 @@ function NewsItem({ news }: NewsItemProps) {
         title={ titulo }
         description={ introducao }
       />
-      <CardFooter publicatiopnDate={ publicacao } />
+      <CardFooter
+        linkToRead={ link }
+        publicatiopnDate={ publicacao }
+      />
       <Line />
       <ButtonWrapper>
         <ButtonFavorite

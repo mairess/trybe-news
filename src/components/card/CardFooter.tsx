@@ -4,13 +4,16 @@ import { ReadTheNesTimestampWrapper } from './style';
 
 type CardFooterProps = {
   publicatiopnDate: string,
+  linkToRead: string,
 };
 
-function CardFooter({ publicatiopnDate }:CardFooterProps) {
+function CardFooter({ publicatiopnDate, linkToRead }:CardFooterProps) {
   return (
     <ReadTheNesTimestampWrapper>
       <Timestamp publicationDate={ publicatiopnDate } />
-      <ButtonReadTheNews />
+      <ButtonReadTheNews
+        linkToRead={ linkToRead }
+      />
     </ReadTheNesTimestampWrapper>
   );
 }

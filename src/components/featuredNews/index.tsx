@@ -38,7 +38,10 @@ function FeaturedNews() {
             title={ latestOne.titulo }
             description={ latestOne.introducao }
           />
-          <CardFooter publicatiopnDate={ latestOne.data_publicacao } />
+          <CardFooter
+            linkToRead={ latestOne.link }
+            publicatiopnDate={ latestOne.data_publicacao }
+          />
         </CardWrapper>
       </Container>
     )
