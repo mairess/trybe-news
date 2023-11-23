@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
-import { Container } from './style';
+import { Container, ButtonLoadMore } from './style';
 import NewsItem from './NewsItem';
 import FilterBar from '../filterBar';
 import { NewsType } from '../../types';
@@ -37,7 +37,11 @@ function NewsList() {
             .map((news) => <NewsItem key={ news.id } news={ news } />)
         )}
         {!hideTheButton && (
-          <button onClick={ () => handleLoadMoreNews() }>Carregar Mais</button>
+          <ButtonLoadMore
+            onClick={ () => handleLoadMoreNews() }
+          >
+            Mais Notícias
+          </ButtonLoadMore>
         )}
       </Container>
     </>
