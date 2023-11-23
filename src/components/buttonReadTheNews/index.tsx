@@ -1,4 +1,4 @@
-import { StyledButton } from './style';
+import { Button } from './style';
 
 type ButtonReadTheNewsProps = {
   linkToRead: string
@@ -9,9 +9,9 @@ function ButtonReadTheNews({ linkToRead }: ButtonReadTheNewsProps) {
     window.open(linkToRead, '_blank');
   }
   return (
-    <StyledButton onClick={ () => HandleNavigateTo() }>
+    <Button onClick={ () => HandleNavigateTo() }>
       <p>Leia a notícia aqui</p>
-    </StyledButton>
+    </Button>
   );
 }
 

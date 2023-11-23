@@ -51,7 +51,7 @@ export const NewsLead = styled.div`
     }
 `;
 
-export const ReadTheNesTimestampWrapper = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;

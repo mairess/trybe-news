@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import NewsContext from '../../context/NewsContext';
-import { Container, ContainerButtons, Button } from './style';
+import { Container, Wrapper, Button } from './style';
 
 function FilterBar() {
   const { filter, setFilter } = useContext(NewsContext);
 
   return (
     <Container>
-      <ContainerButtons>
+      <Wrapper>
         <Button
           className={ filter === 'latests' ? 'selected' : '' }
           onClick={ () => setFilter('latests') }
@@ -32,7 +32,7 @@ function FilterBar() {
         >
           Favoritas
         </Button>
-      </ContainerButtons>
+      </Wrapper>
       {/* <div>Change view</div> */}
     </Container>
   );

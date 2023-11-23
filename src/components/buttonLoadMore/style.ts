@@ -14,7 +14,7 @@ export const Button = styled.button`
     border-radius: 0.125rem;
     border: 1px solid #C31815;
     opacity: 0.28;
-
+    cursor: pointer;
     color: #C31815;
     text-align: center;
     font-family: Poppins;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
     width: 1.125rem;
     height: 1rem;
     flex-shrink: 0;

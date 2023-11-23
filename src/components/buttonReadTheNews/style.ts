@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
     display: flex;
     width: 10.4375rem;
     height: 2.25rem;
@@ -24,7 +24,7 @@ export const StyledButton = styled.button`
         font-size: 0.875rem;
         font-style: normal;
         font-weight: 700;
-        line-height: 165%; /* 1.44375rem */
+        line-height: 165%;
     }
 
 `;

@@ -1,4 +1,4 @@
-import { StyledButton } from './style';
+import { Button } from './style';
 import emptyIcon from '../../assets/empty_favorite_icon.svg';
 import filledIcon from '../../assets/filled_favorite_icon.svg';
 
@@ -9,9 +9,9 @@ type ButtonFavoriteProps = {
 
 function ButtonFavorite({ onClick, isFav }: ButtonFavoriteProps) {
   return (
-    <StyledButton onClick={ onClick }>
+    <Button onClick={ onClick }>
       <img src={ isFav ? filledIcon : emptyIcon } alt="favorite button" />
-    </StyledButton>
+    </Button>
   );
 }
 

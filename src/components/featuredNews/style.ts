@@ -45,10 +45,3 @@ export const ImgWrapper = styled.div`
         }
     }
 `;
-
-export const ReadTheNesTimestampWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 .4rem;
-`;

@@ -1,6 +1,6 @@
 import ButtonReadTheNews from '../buttonReadTheNews';
 import Timestamp from '../timestamp';
-import { ReadTheNesTimestampWrapper } from './style';
+import { Wrapper } from './style';
 
 type CardFooterProps = {
   publicatiopnDate: string,
@@ -9,12 +9,12 @@ type CardFooterProps = {
 
 function CardFooter({ publicatiopnDate, linkToRead }:CardFooterProps) {
   return (
-    <ReadTheNesTimestampWrapper>
+    <Wrapper>
       <Timestamp publicationDate={ publicatiopnDate } />
       <ButtonReadTheNews
         linkToRead={ linkToRead }
       />
-    </ReadTheNesTimestampWrapper>
+    </Wrapper>
   );
 }
 

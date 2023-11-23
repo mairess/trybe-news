@@ -1,4 +1,4 @@
-import { Line, ButtonWrapper, CardWrapper } from './style';
+import { Line, ButtonWrapper, Wrapper } from './style';
 import Card from '../card';
 import CardFooter from '../card/CardFooter';
 import ButtonFavorite from '../buttonFavorite';
@@ -14,7 +14,7 @@ function NewsItem({ news }: NewsItemProps) {
   const { isFavorite, toggleFavorite } = useFavorites(id);
 
   return (
-    <CardWrapper key={ id }>
+    <Wrapper key={ id }>
       <Card
         title={ titulo }
         description={ introducao }
@@ -30,7 +30,7 @@ function NewsItem({ news }: NewsItemProps) {
           onClick={ () => toggleFavorite() }
         />
       </ButtonWrapper>
-    </CardWrapper>
+    </Wrapper>
   );
 }
 
