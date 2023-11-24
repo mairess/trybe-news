@@ -12,6 +12,8 @@ function NewsList() {
     <>
       <FilterBar />
       <NewsItemWrapper>
+        {favToRender.length <= 0 && filter === 'favorites'
+        && (<p>Sem notícias favoritas</p>) }
         {filter === 'favorites' ? (
           favToRender && favToRender
             .map((news) => <NewsItem key={ news.id } news={ news } />)
