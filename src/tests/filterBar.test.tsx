@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from '../App';
 import NewsProvider from '../context/NewsProvider';
 
@@ -19,5 +20,10 @@ describe('Test component FilterBar', () => {
     expect(theReleasesBtn).toBeVisible();
     expect(theNewsBtn).toBeVisible();
     expect(theFavoritsBtn).toBeVisible();
+
+    await userEvent.click(theLatestsBtn);
+    await userEvent.click(theReleasesBtn);
+    await userEvent.click(theNewsBtn);
+    await userEvent.click(theFavoritsBtn);
   });
 });

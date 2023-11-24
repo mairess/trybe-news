@@ -8,7 +8,7 @@ type ButtonProps = {
 function Timestamp({ publicationDate }: ButtonProps) {
   return (
     <Container>
-      <p>{getPublicationDifferenceTime(publicationDate)}</p>
+      <p data-testid="timestamp">{getPublicationDifferenceTime(publicationDate)}</p>
     </Container>
   );
 }
