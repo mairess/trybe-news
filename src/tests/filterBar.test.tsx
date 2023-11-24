@@ -13,17 +13,17 @@ describe('Test component FilterBar', () => {
 
     const theLatestsBtn = screen.getByRole('button', { name: /mais recentes/i });
     const theReleasesBtn = screen.getByRole('button', { name: /release/i });
-    const theNewsBtn = screen.getByRole('button', { name: /notícias/i });
+    const theNewsBtn = screen.getAllByRole('button', { name: /notícias/i });
     const theFavoritsBtn = screen.getByRole('button', { name: /favoritas/i });
 
     expect(theLatestsBtn).toBeVisible();
     expect(theReleasesBtn).toBeVisible();
-    expect(theNewsBtn).toBeVisible();
+    expect(theNewsBtn[0]).toBeVisible();
     expect(theFavoritsBtn).toBeVisible();
 
     await userEvent.click(theLatestsBtn);
     await userEvent.click(theReleasesBtn);
-    await userEvent.click(theNewsBtn);
+    await userEvent.click(theNewsBtn[0]);
     await userEvent.click(theFavoritsBtn);
   });
 });

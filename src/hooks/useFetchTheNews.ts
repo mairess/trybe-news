@@ -21,6 +21,7 @@ function useFetchTheNews() {
         convertImagesToLink(data.items);
 
         setTheNews(data.items);
+        console.log(data.items);
       } catch (error: any) {
         console.log(`Request error: ${error.message}`);
       } finally {
