@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { TheNewsType } from '../types';
 import parseImages from '../helpers/parseImages';
 import convertImagesToLink from '../helpers/convertImagesToLink';
+import apiDataMock from '../tests/mocks/apiDataMock';
 
 function useFetchTheNews() {
-  const [theNews, setTheNews] = useState<TheNewsType>([]);
+  const [theNews, setTheNews] = useState<TheNewsType>(apiDataMock);
   const [loading, setLoading] = useState(false);
 
   const API = 'https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=100';
