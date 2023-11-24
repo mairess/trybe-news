@@ -10,13 +10,15 @@ describe('Test component newsList', () => {
         <App />
       </NewsProvider>,
     );
+    const favoriteBtn = screen.getAllByRole('button', { name: /favorite button/i });
     const loadMoreBtn = screen.getByRole('button', { name: /mais notícias/i });
-    const cardsBeforeClick = screen.getAllByTestId('timestamp');
+    const cardsBeforeClick = await screen.findAllByTestId('timestamp');
 
     expect(loadMoreBtn).toBeVisible();
     expect(cardsBeforeClick).toHaveLength(10);
 
     await userEvent.click(loadMoreBtn);
+    await userEvent.click(favoriteBtn[1]);
 
     // await screen.findByRole('button', { name: /mais notícias/i });
     // const cardsAfterClick = screen.getAllByTestId('timestamp');
