@@ -18,7 +18,7 @@ export const Container = styled.div`
     }
 `;
 
-export const Wrapper = styled.div`
+export const ButtonsWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,4 +70,9 @@ export const Button = styled.button`
         font-size: 0.8rem;
         line-height: 3.5rem;
     }
+`;
+
+export const SearchBarWrapper = styled.div`
+    display: flex;
+    justify-content: center;
 `;

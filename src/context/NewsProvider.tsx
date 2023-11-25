@@ -13,6 +13,12 @@ function NewsProvider({ children }: FilterProviderProps) {
   const [favToRender, setFavToRender] = useState<TheNewsType>([]);
   const [filteredContent, setFilteredContent] = useState<TheNewsType>([]);
   const [loadMoreNews, setLoadMoreNews] = useState(10);
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(target.value);
+  };
+  console.log(searchInput);
 
   function handleLoadMoreNews() {
     setLoadMoreNews((prev) => prev + 10);
@@ -22,7 +28,7 @@ function NewsProvider({ children }: FilterProviderProps) {
     let filtered = theNews.filter((news) => {
       if (filter === 'latests') {
         setLoadMoreNews(10);
-        return theNews;
+        return true;
       }
 
       if (filter === 'releases') {
@@ -44,8 +50,16 @@ function NewsProvider({ children }: FilterProviderProps) {
       setFavToRender(parsedFavorites);
     }
 
+    if (searchInput !== '') {
+      filtered = filtered.filter((news) => {
+        const lowercaseTitulo = news.titulo.toLocaleLowerCase();
+        const lowercaseSearchInput = searchInput.toLowerCase();
+        return lowercaseTitulo.includes(lowercaseSearchInput);
+      });
+    }
+
     setFilteredContent(filtered);
-  }, [filter, theNews]);
+  }, [filter, theNews, searchInput]);
   return (
     <NewsContext.Provider
       value={ {
@@ -59,6 +73,8 @@ function NewsProvider({ children }: FilterProviderProps) {
         setFavToRender,
         handleLoadMoreNews,
         loadMoreNews,
+        handleChange,
+        searchInput,
       } }
     >
       {children}
