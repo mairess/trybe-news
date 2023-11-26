@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
     position: absolute;
     left: 10px;
-    top: 5px;
+    top: 11px;
     display: flex;
     align-items: center;
 `;
@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
 export const Input = styled.input`
     height: 1.5rem;
     border-radius: 1rem;
-    padding: 0.7rem 1.6rem;
+    border: none;
+    padding: 1.2rem 0 1rem 2rem;
     width: 100%;
 `;
