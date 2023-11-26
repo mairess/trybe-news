@@ -6,15 +6,19 @@ function useFavorites(newsId: number) {
   const { theNews, setFavToRender } = useContext(NewsContext);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  useEffect(() => {
+  const getParsedFavorites = () => {
     const storedFavorites = localStorage.getItem('favorites');
-    const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
-    setIsFavorite(parsedFavorites.some((fav: NewsType) => fav?.id === newsId));
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  };
+
+  useEffect(() => {
+    const parsedFavorites = getParsedFavorites();
+    setIsFavorite(parsedFavorites
+      .some((fav: NewsType) => fav.id === newsId));
   }, [newsId]);
 
   const toggleFavorite = () => {
-    const storedFavorites = localStorage.getItem('favorites');
-    const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
+    const parsedFavorites = getParsedFavorites();
 
     if (isFavorite) {
       const updatedFavorites = parsedFavorites

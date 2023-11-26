@@ -4,7 +4,7 @@ import { Input, Container, Wrapper } from './style';
 import NewsContext from '../../context/NewsContext';
 
 function SearchBar() {
-  const { handleChange } = useContext(NewsContext);
+  const { handleChange, searchInput } = useContext(NewsContext);
 
   return (
     <Container>
@@ -15,8 +15,7 @@ function SearchBar() {
         placeholder="Busque aqui"
         onChange={ handleChange }
         type="text"
-        name=""
-        id=""
+        value={ searchInput }
       />
     </Container>
   );

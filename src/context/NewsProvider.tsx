@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import useFetchTheNews from '../hooks/useFetchTheNews';
 import NewsContext from './NewsContext';
-import { TheNewsType } from '../types';
+import { NewsType, TheNewsType } from '../types';
 
 type FilterProviderProps = {
   children: React.ReactNode,
@@ -18,7 +18,6 @@ function NewsProvider({ children }: FilterProviderProps) {
   const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(target.value);
   };
-  console.log(searchInput);
 
   function handleLoadMoreNews() {
     setLoadMoreNews((prev) => prev + 10);
@@ -46,8 +45,16 @@ function NewsProvider({ children }: FilterProviderProps) {
     if (filter === 'favorites') {
       const storedFavorites = localStorage.getItem('favorites');
       const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
-      filtered = parsedFavorites;
       setFavToRender(parsedFavorites);
+
+      if (searchInput !== '') {
+        const newFavs = parsedFavorites
+          .filter((news: NewsType) => news.titulo.includes(searchInput));
+        setFavToRender(newFavs);
+        filtered = newFavs;
+      } else {
+        filtered = parsedFavorites;
+      }
     }
 
     if (searchInput !== '') {
@@ -75,6 +82,7 @@ function NewsProvider({ children }: FilterProviderProps) {
         loadMoreNews,
         handleChange,
         searchInput,
+        setSearchInput,
       } }
     >
       {children}

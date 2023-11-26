@@ -4,7 +4,7 @@ import { Container, ButtonsWrapper, Button, SearchBarWrapper } from './style';
 import SearchBar from '../searchBar';
 
 function FilterBar() {
-  const { filter, setFilter } = useContext(NewsContext);
+  const { filter, setFilter, setSearchInput } = useContext(NewsContext);
 
   return (
     <>
@@ -12,25 +12,37 @@ function FilterBar() {
         <ButtonsWrapper>
           <Button
             className={ filter === 'latests' ? 'selected' : '' }
-            onClick={ () => setFilter('latests') }
+            onClick={ () => {
+              setFilter('latests');
+              setSearchInput('');
+            } }
           >
             Mais recentes
           </Button>
           <Button
             className={ filter === 'releases' ? 'selected' : '' }
-            onClick={ () => setFilter('releases') }
+            onClick={ () => {
+              setFilter('releases');
+              setSearchInput('');
+            } }
           >
             Release
           </Button>
           <Button
             className={ filter === 'news' ? 'selected' : '' }
-            onClick={ () => setFilter('news') }
+            onClick={ () => {
+              setFilter('news');
+              setSearchInput('');
+            } }
           >
             Notícias
           </Button>
           <Button
             className={ filter === 'favorites' ? 'selected' : '' }
-            onClick={ () => setFilter('favorites') }
+            onClick={ () => {
+              setFilter('favorites');
+              setSearchInput('');
+            } }
           >
             Favoritas
           </Button>
