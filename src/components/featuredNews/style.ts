@@ -33,13 +33,13 @@ export const ImgWrapper = styled.div`
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
     
-    @media screen and (width <= 480px) {
+    @media screen and (max-width: 480px) {
         img {
             width: 21rem;
         }
     }
 
-    @media screen and (481px <= width <= 1280px) {
+    @media screen and (min-width: 481px) and (max-width: 1280px) {
         img {
             width: 28.375rem;
         }

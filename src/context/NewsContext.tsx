@@ -12,6 +12,9 @@ type ContextType = {
   setFavToRender: (news: TheNewsType) => void,
   handleLoadMoreNews: () => void,
   loadMoreNews: number,
+  handleChange: ({ target }: React.ChangeEvent<HTMLInputElement>) => void,
+  searchInput: string,
+  setSearchInput: (value: string) => void,
 };
 
 const NewsContext = createContext({} as ContextType);

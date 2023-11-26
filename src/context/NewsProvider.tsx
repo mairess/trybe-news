@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import useFetchTheNews from '../hooks/useFetchTheNews';
 import NewsContext from './NewsContext';
-import { TheNewsType } from '../types';
+import { NewsType, TheNewsType } from '../types';
+import getParsedFavorites from '../helpers/getParsedFavorites';
 
 type FilterProviderProps = {
   children: React.ReactNode,
@@ -13,6 +14,11 @@ function NewsProvider({ children }: FilterProviderProps) {
   const [favToRender, setFavToRender] = useState<TheNewsType>([]);
   const [filteredContent, setFilteredContent] = useState<TheNewsType>([]);
   const [loadMoreNews, setLoadMoreNews] = useState(10);
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(target.value);
+  };
 
   function handleLoadMoreNews() {
     setLoadMoreNews((prev) => prev + 10);
@@ -21,31 +27,44 @@ function NewsProvider({ children }: FilterProviderProps) {
   useEffect(() => {
     let filtered = theNews.filter((news) => {
       if (filter === 'latests') {
-        setLoadMoreNews(10);
-        return theNews;
+        return true;
       }
 
-      if (filter === 'releases') {
-        setLoadMoreNews(10);
-        return news.tipo === 'Release';
+      if (filter === 'Release') {
+        return news.tipo === filter;
       }
 
-      if (filter === 'news') {
-        setLoadMoreNews(10);
-        return news.tipo === 'Notícia';
+      if (filter === 'Notícia') {
+        return news.tipo === filter;
       }
+      setLoadMoreNews(10);
       return true;
     });
 
     if (filter === 'favorites') {
-      const storedFavorites = localStorage.getItem('favorites');
-      const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
-      filtered = parsedFavorites;
+      const parsedFavorites = getParsedFavorites();
       setFavToRender(parsedFavorites);
+
+      if (searchInput !== '') {
+        const newFavs = parsedFavorites
+          .filter((news: NewsType) => news.titulo.includes(searchInput));
+        setFavToRender(newFavs);
+        filtered = newFavs;
+      } else {
+        filtered = parsedFavorites;
+      }
+    }
+
+    if (searchInput !== '') {
+      filtered = filtered.filter((news) => {
+        const lowercaseTitulo = news.titulo.toLocaleLowerCase();
+        const lowercaseSearchInput = searchInput.toLowerCase();
+        return lowercaseTitulo.includes(lowercaseSearchInput);
+      });
     }
 
     setFilteredContent(filtered);
-  }, [filter, theNews]);
+  }, [filter, theNews, searchInput]);
   return (
     <NewsContext.Provider
       value={ {
@@ -59,6 +78,9 @@ function NewsProvider({ children }: FilterProviderProps) {
         setFavToRender,
         handleLoadMoreNews,
         loadMoreNews,
+        handleChange,
+        searchInput,
+        setSearchInput,
       } }
     >
       {children}
