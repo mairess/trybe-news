@@ -1,15 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import NewsContext from '../context/NewsContext';
 import { NewsType } from '../types';
+import getParsedFavorites from '../helpers/getParsedFavorites';
 
 function useFavorites(newsId: number) {
   const { theNews, setFavToRender } = useContext(NewsContext);
   const [isFavorite, setIsFavorite] = useState(false);
-
-  const getParsedFavorites = () => {
-    const storedFavorites = localStorage.getItem('favorites');
-    return storedFavorites ? JSON.parse(storedFavorites) : [];
-  };
 
   useEffect(() => {
     const parsedFavorites = getParsedFavorites();

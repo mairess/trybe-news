@@ -20,18 +20,18 @@ function FilterBar() {
             Mais recentes
           </Button>
           <Button
-            className={ filter === 'releases' ? 'selected' : '' }
+            className={ filter === 'Release' ? 'selected' : '' }
             onClick={ () => {
-              setFilter('releases');
+              setFilter('Release');
               setSearchInput('');
             } }
           >
             Release
           </Button>
           <Button
-            className={ filter === 'news' ? 'selected' : '' }
+            className={ filter === 'Notícia' ? 'selected' : '' }
             onClick={ () => {
-              setFilter('news');
+              setFilter('Notícia');
               setSearchInput('');
             } }
           >

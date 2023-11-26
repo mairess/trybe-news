@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import useFetchTheNews from '../hooks/useFetchTheNews';
 import NewsContext from './NewsContext';
 import { NewsType, TheNewsType } from '../types';
+import getParsedFavorites from '../helpers/getParsedFavorites';
 
 type FilterProviderProps = {
   children: React.ReactNode,
@@ -26,25 +27,22 @@ function NewsProvider({ children }: FilterProviderProps) {
   useEffect(() => {
     let filtered = theNews.filter((news) => {
       if (filter === 'latests') {
-        setLoadMoreNews(10);
         return true;
       }
 
-      if (filter === 'releases') {
-        setLoadMoreNews(10);
-        return news.tipo === 'Release';
+      if (filter === 'Release') {
+        return news.tipo === filter;
       }
 
-      if (filter === 'news') {
-        setLoadMoreNews(10);
-        return news.tipo === 'Notícia';
+      if (filter === 'Notícia') {
+        return news.tipo === filter;
       }
+      setLoadMoreNews(10);
       return true;
     });
 
     if (filter === 'favorites') {
-      const storedFavorites = localStorage.getItem('favorites');
-      const parsedFavorites = storedFavorites ? JSON.parse(storedFavorites) : [];
+      const parsedFavorites = getParsedFavorites();
       setFavToRender(parsedFavorites);
 
       if (searchInput !== '') {
