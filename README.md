@@ -9,7 +9,7 @@ Este é um projeto em React que visa transformar dados em notícias. Utilizando 
 - **Notícias Recentes**: Exibe as notícias mais recentes do IBGE.
 - **Acesso à Notícia Completa**: Cada notícia na lista pode ser clicada para acessar a notícia completa.
 - **Favoritos**: O usuário pode marcar as notícias que mais gostar como favoritas para fácil acesso no futuro.
-- **Filtros**: O usuário pode filtrar as notícias por tipo e favoritas.
+- **Filtros**: O usuário pode filtrar as notícias por tipo, favoritas e por título.
 
 ## Tecnologias Utilizadas 🛠️
 
