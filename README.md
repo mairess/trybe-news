@@ -1,45 +1,41 @@
-# Transformando Dados em Notícias 🚀
+# Transforming Data into News 🚀
 
-## Sobre o Projeto 📄
+## About the Project 📄
 
-Este é um projeto em React que visa transformar dados em notícias. Utilizando a API de notícias do IBGE para criar uma página que apresente as notícias mais recentes de forma organizada e intuitiva.
+This is a React project that aims to transform data into news. It uses the IBGE news API to create a page that displays the most recent news in an organized and intuitive manner.
 
-## Funcionalidades 💡
+## Features 💡
 
-- **Notícias Recentes**: Exibe as notícias mais recentes do IBGE.
-- **Acesso à Notícia Completa**: Cada notícia na lista pode ser clicada para acessar a notícia completa.
-- **Favoritos**: O usuário pode marcar as notícias que mais gostar como favoritas para fácil acesso no futuro.
-- **Filtros**: O usuário pode filtrar as notícias por tipo, favoritas e por título.
+- **Recent News**: Displays the most recent news from IBGE.
+- **Access to Full News**: Each news item in the list can be clicked to access the complete news article.
+- **Favorites**: Users can mark their favorite news for easy access in the future.
+- **Filters**: Users can filter news by type, favorites, and title.
 
-## Tecnologias Utilizadas 🛠️
+## Technologies Used 🛠️
 
-Este projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed using the following technologies:
 
-- **React com TypeScript**: Utilizei o React em conjunto com TypeScript para construir a interface do usuário. O React permite criar interfaces de usuário interativas e eficientes, e o TypeScript adiciona uma camada de segurança ao nosso código, proporcionando tipagem estática e autocompletar inteligente durante o desenvolvimento.
+- **React with TypeScript**: React was used in conjunction with TypeScript to build the user interface. React allows for the creation of interactive and efficient user interfaces, and TypeScript adds a layer of security to our code by providing static typing and intelligent autocompletion during development.
 
-- **Context API**: O Context API do foi usado para gerenciar o estado global da aplicação. Isso permite compartilhar dados facilmente entre diferentes componentes sem a necessidade de prop drilling.
+- **Context API**: The Context API was used to manage the global state of the application. This allows for easy data sharing between different components without the need for prop drilling.
 
-- **Custom Hooks**: Hooks personalizados para encapsular a lógica do componente que pode ser reutilizada em vários componentes. Isso ajuda a manter código limpo e facilita a manutenção.
+- **Custom Hooks**: Custom hooks were created to encapsulate component logic that can be reused in various components. This helps keep the code clean and facilitates maintenance.
 
-- **Styled-Components**: Utilizei Styled-Components para a estilização da aplicação. Esta biblioteca permite escrever estilos CSS de forma mais intuitiva e eficiente, encapsulando o escopo dos estilos dentro dos componentes.
+- **Styled-Components**: Styled-Components was used for styling the application. This library allows for writing CSS styles in a more intuitive and efficient way, encapsulating the scope of styles within components.
 
-- **Responsividade**: O aplicativo é totalmente responsivo e pode ser usado em dispositivos de diferentes tamanhos.
+- **Responsiveness**: The application is fully responsive and can be used on devices of different sizes.
 
-## Como Executar o Projeto 🚀
+## How to Run the Project 🚀
 
-1. **Clone o repositório**: Primeiro, clone o repositório. Você pode fazer isso com o seguinte comando: `git clone git@github.com:mairess/trybe-news.git`.
-2. **Instale as dependências**: Navegue até o diretório do projeto e instale as dependências .necessárias com o comando: `npm install`.
-3. **Execute o projeto**: É preciso ter Node.js instalado, se não estivertiver, baixe-o em [nodejs.org](https://nodejs.org/). Agora você pode iniciar um servidor com o comando: `npm run dev`.
-4. **Execute a cobertura de testes**: Você também pode executar a cobertura de testes com o comando: `npm run coverage`.
+1. **Clone the repository**: First, clone the repository. You can do this with the following command: `git clone git@github.com:mairess/trybe-news.git`.
+2. **Install dependencies**: Navigate to the project directory and install the necessary dependencies with the command: `npm install`.
+3. **Run the project**: You need to have Node.js installed; if not, download it from [nodejs.org](https://nodejs.org/). Now you can start a server with the command: `npm run dev`.
+4. **Run test coverage**: You can also run test coverage with the command: `npm run coverage`.
 
+## Contributions 💡
 
+Contributions are always welcome! Feel free to open an issue or submit a pull request.
 
+## License 📝
 
-## Contribuições 💡
-
-Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
-
-## Licença 📝
-
-Este projeto é licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT) você poder ler o aqurivo [aqui](https://github.com/mairess/trybe-news/blob/main/LICENSE.txt)
-
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). You can read the file [here](https://github.com/mairess/trybe-news/blob/main/LICENSE.txt).
