@@ -1,10 +1,9 @@
-import moment from 'moment';
-import { formatDistance } from 'date-fns';
+import { formatDistance, format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 function getDate() {
-  const date = moment().format('ddd, MMMM D, YYYY');
-  return date;
+  const date = new Date();
+  return format(date, 'EEEE, dd \'de\' MMMM, yyyy', { locale: ptBR });
 }
 
 function getDifference(apiDate: string) {
