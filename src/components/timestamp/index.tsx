@@ -1,5 +1,5 @@
 import { Container } from './style';
-import getPublicationDifferenceTime from '../../helpers/showPublicationTimeDifference';
+import { getDifference } from '../../helpers/getDate';
 
 type ButtonProps = {
   publicationDate: string,
@@ -8,7 +8,7 @@ type ButtonProps = {
 function Timestamp({ publicationDate }: ButtonProps) {
   return (
     <Container>
-      <p data-testid="timestamp">{getPublicationDifferenceTime(publicationDate)}</p>
+      <p data-testid="timestamp">{getDifference(publicationDate)}</p>
     </Container>
   );
 }
