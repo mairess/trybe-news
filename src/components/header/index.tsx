@@ -1,10 +1,16 @@
-import { Container, Logo, Title } from './style';
+import { Container, Logo, Wrapper, WrapperDate, Title } from './style';
+import { getDate } from '../../helpers/getDate';
 
 function Header() {
   return (
     <Container>
       <Logo />
-      <Title>Trybe News</Title>
+      <Wrapper>
+        <Title>Trybe News</Title>
+        <WrapperDate>
+          <p>{getDate()}</p>
+        </WrapperDate>
+      </Wrapper>
     </Container>
   );
 }
