@@ -1,5 +1,13 @@
 # Transforming Data into News 🚀
 
+<div align="center">
+  
+| Statements                  | Branches                | Functions                 | Lines                |
+| --------------------------- | ----------------------- | ------------------------- | -------------------- |
+| ![Statements](https://img.shields.io/badge/Coverage-95.95%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-93.05%25-brightgreen.svg) | ![Functions](https://img.shields.io/badge/Coverage-89.18%25-yellow.svg) | ![Lines](https://img.shields.io/badge/Coverage-95.95%25-brightgreen.svg)    |
+
+</div>
+
 ## About the Project 📄
 
 This is a React project that aims to transform data into news. It uses the IBGE news API to create a page that displays the most recent news in an organized and intuitive manner.
@@ -15,22 +23,91 @@ This is a React project that aims to transform data into news. It uses the IBGE 
 
 This project was developed using the following technologies:
 
-- **React with TypeScript**: React was used in conjunction with TypeScript to build the user interface. React allows for the creation of interactive and efficient user interfaces, and TypeScript adds a layer of security to our code by providing static typing and intelligent autocompletion during development.
+- **React**
 
-- **Context API**: The Context API was used to manage the global state of the application. This allows for easy data sharing between different components without the need for prop drilling.
+- **TypeScript**
 
-- **Custom Hooks**: Custom hooks were created to encapsulate component logic that can be reused in various components. This helps keep the code clean and facilitates maintenance.
+- **Context API**
 
-- **Styled-Components**: Styled-Components was used for styling the application. This library allows for writing CSS styles in a more intuitive and efficient way, encapsulating the scope of styles within components.
+- **Custom Hooks**
 
-- **Responsiveness**: The application is fully responsive and can be used on devices of different sizes.
+- **React testing library**
+
+- **Vitest**
 
 ## How to Run the Project 🚀
 
-1. **Clone the repository**: First, clone the repository. You can do this with the following command: `git clone git@github.com:mairess/trybe-news.git`.
-2. **Install dependencies**: Navigate to the project directory and install the necessary dependencies with the command: `npm install`.
-3. **Run the project**: You need to have Node.js installed; if not, download it from [nodejs.org](https://nodejs.org/). Now you can start a server with the command: `npm run dev`.
-4. **Run test coverage**: You can also run test coverage with the command: `npm run coverage`.
+<details>
+
+<summary><strong>Run project locally</strong></summary><br>
+
+> ⚠️ É preciso ter o [Node](https://nodejs.org/en) instalado em sua máquina.
+>
+<!-- > ⚠️ É preciso criar um arquivo `.env` na raiz do projeto, siga o exemplo do arquivo [`env.example`](./env.example). -->
+>
+
+1. Clone the repository:
+
+```BASH
+git clone git@github.com:mairess/trybe-news.git
+```
+
+2. Install dependencies:
+
+```BASH
+npm install
+```
+
+3. Start the server:
+
+```BASH
+npm run dev
+```
+
+4. The server will be available on port `3000`
+
+</details>
+
+<details>
+
+<summary><strong>Run project with docker</strong></summary><br>
+
+> ⚠️ É preciso ter o [Docker](https://www.docker.com/get-started/) instalado em sua máquina.
+
+1. Clone the repository:
+
+```BASH
+git clone git@github.com:mairess/trybe-news.git
+```
+
+2. Up the container:
+
+```BASH
+docker compose up -d
+```
+
+4. The server will be available on port `3000`
+
+</details>
+
+
+<details>
+
+<summary><strong>Run tests</strong></summary><br>
+
+Run all tests
+
+```SHELL
+npm run test
+```
+
+Run coverage
+
+```SHELL
+npm run coverage
+```
+
+</details>
 
 ## Contributions 💡
 
