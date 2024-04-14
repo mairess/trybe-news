@@ -35,6 +35,10 @@ This project was developed using the following technologies:
 
 - **Vitest**
 
+- **Styled components**
+
+- **Docker**
+
 ## How to Run the Project 🚀
 
 <details>
