@@ -41,7 +41,7 @@ This project was developed using the following technologies:
 
 <summary><strong>Run project locally</strong></summary><br>
 
-> ⚠️ É preciso ter o [Node](https://nodejs.org/en) instalado em sua máquina.
+> ⚠️ You must have [Node](https://nodejs.org/en) installed on your machine.
 >
 <!-- > ⚠️ É preciso criar um arquivo `.env` na raiz do projeto, siga o exemplo do arquivo [`env.example`](./env.example). -->
 >
@@ -72,7 +72,7 @@ npm run dev
 
 <summary><strong>Run project with docker</strong></summary><br>
 
-> ⚠️ É preciso ter o [Docker](https://www.docker.com/get-started/) instalado em sua máquina.
+> ⚠️ You must have [Docker](https://www.docker.com/get-started/) installed on your machine.
 
 1. Clone the repository:
 
