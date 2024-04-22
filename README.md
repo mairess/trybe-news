@@ -1,10 +1,10 @@
-# Transforming Data into News 🚀
+<h1 align="center">Transforming Data into News 🚀</h1>
 
 <div align="center">
   
-| Statements                  | Branches                | Functions                 | Lines                |
-| --------------------------- | ----------------------- | ------------------------- | -------------------- |
-| ![Statements](https://img.shields.io/badge/Coverage-95.95%25-brightgreen.svg) | ![Branches](https://img.shields.io/badge/Coverage-93.05%25-brightgreen.svg) | ![Functions](https://img.shields.io/badge/Coverage-89.18%25-yellow.svg) | ![Lines](https://img.shields.io/badge/Coverage-95.95%25-brightgreen.svg)    |
+<a href="https://codecov.io/gh/mairess/trybe-news" > 
+ <img src="https://codecov.io/gh/mairess/trybe-news/graph/badge.svg?token=NGG67CFVQ3"/> 
+</a>
 
 </div>
 
