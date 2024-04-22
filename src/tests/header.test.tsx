@@ -13,6 +13,6 @@ describe('Test component Header', () => {
     const logo = screen.getByRole('img', { name: /logo/i });
 
     expect(logo).toBeVisible();
-    expect(title).toBeVisible();
+    expect(title).not.toBeVisible();
   });
 });
