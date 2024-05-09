@@ -12,12 +12,17 @@
 
 This is a React project that aims to transform data into news. It uses the IBGE news API to create a page that displays the most recent news in an organized and intuitive manner.
 
+![desktop](desktop.jpeg)
+
+![mobile](mobile.jpeg)
 ## Features 💡
 
 - **Recent News**: Displays the most recent news from IBGE.
 - **Access to Full News**: Each news item in the list can be clicked to access the complete news article.
 - **Favorites**: Users can mark their favorite news for easy access in the future.
 - **Filters**: Users can filter news by type, favorites, and title.
+
+
 
 ## Technologies Used 🛠️
 
